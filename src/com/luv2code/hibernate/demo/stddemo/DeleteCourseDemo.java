@@ -24,14 +24,12 @@ public class DeleteCourseDemo {
 
             session.beginTransaction();
 
-            //get the instructor from db
-            int theId=1;
-            Instructor tempInstructor=session.get(Instructor.class,theId);
-
-            System.out.println("Instuctor :"+tempInstructor);
-
-            System.out.println("Courses: "+ tempInstructor.getCourses());
-
+           //get course
+            int theId=12;
+            Course tempCourse = session.get(Course.class,theId);
+            // delete course
+            System.out.println("Deleting course"+tempCourse);
+            session.delete(tempCourse);
 
 
             session.getTransaction().commit();
